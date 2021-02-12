@@ -23,13 +23,19 @@
                 border-color: mc-color($second, if($is-dark, lighter, darker));
             }
 
-            &.ng-invalid .mc-form-field__container {
-                background-color: if($is-dark, transparent, mc-color($error, lighter));
+            &.ng-invalid {
+                & .mc-form-field__container {
+                    background-color: if($is-dark, transparent, mc-color($error, lighter));
 
-                border-color: mc-color($error);
+                    border-color: mc-color($error);
 
-                .mc-input,
-                .mc-textarea {
+                    .mc-input,
+                    .mc-textarea {
+                        color: mc-color($error);
+                    }
+                }
+
+                & .mc-form-field__hint {
                     color: mc-color($error);
                 }
             }
